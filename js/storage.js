@@ -10,7 +10,7 @@ const DEFAULT_STATE = {
   defeats: 0,
   streak: 0,
   bestStreak: 0,
-  collection: CARD_LIBRARY.slice(0, 11).map((card) => card.id),
+  collection: CARD_LIBRARY.slice(0, 8).map((card) => card.id),
   deck: CARD_LIBRARY.slice(0, 5).map((card) => card.id),
   selectedDeck: CARD_LIBRARY.slice(0, 5).map((card) => card.id),
   lastPack: [],
