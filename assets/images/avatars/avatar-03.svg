@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="León">
+  <rect width="200" height="200" rx="28" fill="#1d2d16"/>
+  <circle cx="100" cy="75" r="32" fill="#f3d3a6"/>
+  <path d="M70 82c-18-8-27 4-27 23 0 18 18 25 29 22 10-3 15-11 17-19l9-26h-28Z" fill="#e0a63c"/>
+  <path d="M130 82c18-8 27 4 27 23 0 18-18 25-29 22-10-3-15-11-17-19l-9-26h28Z" fill="#e0a63c"/>
+  <path d="M74 104c10 19 24 29 26 29 8 0 18-6 26-29l12 42H62l12-42Z" fill="#f4d46a"/>
+  <path d="M84 70l10-16 10 16" stroke="#40240a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="84" cy="76" r="3" fill="#262626"/>
+  <circle cx="116" cy="76" r="3" fill="#262626"/>
+  <path d="M92 88c6 5 12 5 16 0" stroke="#c76a54" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <rect x="40" y="145" width="120" height="18" rx="9" fill="#0e1d10" opacity="0.8"/>
+</svg>

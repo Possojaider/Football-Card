@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Fuego">
+  <rect width="200" height="200" rx="28" fill="#1c0d09"/>
+  <path d="M100 28c26 25 45 46 45 70 0 28-24 44-45 44s-45-16-45-44c0-24 19-45 45-70Z" fill="#ff8c42"/>
+  <path d="M86 92c8 18 23 29 35 35-12 4-22 14-27 28-6-10-18-17-31-18 13-10 18-27 23-45Z" fill="#ffd166"/>
+  <path d="M80 102c7 13 17 21 28 24-8 8-16 17-20 29-8-8-18-15-27-18 9-12 12-24 19-35Z" fill="#ff5a36" opacity="0.9"/>
+  <circle cx="62" cy="60" r="8" fill="#fff1a8"/>
+  <circle cx="118" cy="52" r="10" fill="#fff1a8" opacity="0.9"/>
+  <rect x="38" y="145" width="124" height="18" rx="9" fill="#2d120d" opacity="0.8"/>
+</svg>

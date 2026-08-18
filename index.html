@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Card Battle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css"/>
+  </head>
+  <body>
+    <div id="login-screen" class="login-wrapper">
+      <div class="login-card glass-panel">
+        <div class="login-brand">
+          <div class="brand-icon large">⚽</div>
+          <div>
+            <p class="eyebrow">FOOTBALL CARD</p>
+            <h1 id="profile-form-title">CREA TU PERFIL</h1>
+          </div>
+        </div>
+
+        <form id="profile-form" class="profile-form">
+          <label for="playerName" class="form-label">¿Cómo quieres llamarte?</label>
+          <input
+            type="text"
+            id="playerName"
+            class="form-control"
+            placeholder="Escribe tu nombre"
+            maxlength="16"
+            required
+          />
+
+          <div class="avatar-section">
+            <label class="form-label">ELIGE TU PERFIL</label>
+            <div id="avatar-picker" class="avatar-picker"></div>
+            <input type="hidden" id="selected-avatar" value="assets/images/avatars/avatar-01.svg" />
+          </div>
+
+          <div id="login-error" class="login-error"></div>
+          <button id="profile-submit" class="primary-btn w-100 mt-2" type="submit">CREAR PERFIL</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="game-shell">
+      <header class="topbar glass-panel">
+        <div class="brand-wrap">
+          <div class="brand-icon">⚽</div>
+          <div>
+            <div class="brand-title">FOOTBALL CARD BATTLE</div>
+          </div>
+        </div>
+        <div class="topbar-stats">
+          <span class="stat-pill coins"><i class="fa-solid fa-coins"></i> <span id="header-coins">0</span></span>
+          <span class="stat-pill level"><i class="fa-solid fa-star"></i> NIVEL <span id="header-level">1</span></span>
+        </div>
+      </header>
+
+      <div class="profile-card glass-panel">
+        <div class="profile-avatar-wrap">
+          <img id="profile-avatar" class="profile-avatar" src="assets/images/avatars/avatar-01.svg" alt="Avatar del jugador" />
+        </div>
+        <div class="profile-meta">
+          <h3 id="profile-name">-</h3>
+          <div class="profile-stats">
+            <span>⭐ NIVEL <strong id="profile-level">1</strong></span>
+            <span>⚔️ <strong id="profile-wins">0</strong> victorias</span>
+          </div>
+          <div class="profile-actions">
+            <button id="edit-profile-btn" class="secondary-btn small-btn" type="button">⚙️ EDITAR PERFIL</button>
+            <button id="change-profile-btn" class="secondary-btn small-btn" type="button">🔄 CAMBIAR PERFIL</button>
+            <button id="delete-profile-btn" class="secondary-btn small-btn danger-btn" type="button">🚪 ELIMINAR PERFIL</button>
+          </div>
+        </div>
+      </div>
+
+      <nav class="main-nav glass-panel">
+        <button class="nav-btn active" data-screen="home"><i class="fa-solid fa-house"></i> Inicio</button>
+        <button class="nav-btn" data-screen="deck"><i class="fa-solid fa-layer-group"></i> Mi mazo</button>
+        <button class="nav-btn" data-screen="collection"><i class="fa-solid fa-book"></i> Colección</button>
+        <button class="nav-btn" data-screen="shop"><i class="fa-solid fa-store"></i> Tienda</button>
+        <button class="nav-btn" data-screen="stats"><i class="fa-solid fa-chart-column"></i> Estadísticas</button>
+      </nav>
+
+      <main class="app-main">
+        <section id="screen-home" class="screen active">
+          <div class="hero-panel">
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+              <p class="eyebrow">CAMPANA DE LIGA</p>
+              <h1>Domina la mesa de juego</h1>
+              <p>Construye tu mazo, supera al rival y conquista la temporada.</p>
+              <div class="hero-stats-row">
+                <div class="mini-stat">
+                  <span class="mini-label">🪙</span>
+                  <strong id="home-coins">0</strong>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-label">⭐</span>
+                  <strong id="home-level">1</strong>
+                </div>
+                <div class="mini-stat">
+                  <span class="mini-label">📈</span>
+                  <strong id="home-xp">0 XP</strong>
+                </div>
+              </div>
+              <div class="hero-actions">
+                <button id="btn-play" class="primary-btn"><i class="fa-solid fa-futbol"></i> JUGAR</button>
+                <button class="secondary-btn" data-screen-target="deck"><i class="fa-regular fa-clipboard"></i> MI MAZO</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-deck" class="screen">
+          <div class="section-header">
+            <h2>MI MAZO</h2>
+            <div class="section-chip"><span id="deck-count">0</span>/5 cartas</div>
+          </div>
+          <div class="deck-builder-layout">
+            <div class="deck-selected-panel glass-panel">
+              <h3>Cartas seleccionadas</h3>
+              <div id="deck-slots" class="deck-slots"></div>
+              <div class="deck-actions">
+                <button id="btn-start-match" class="primary-btn disabled" disabled><i class="fa-solid fa-play"></i> JUGAR PARTIDO</button>
+              </div>
+            </div>
+            <div class="deck-available-panel glass-panel">
+              <h3>Mi colección</h3>
+              <div id="deck-available" class="available-card-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-collection" class="screen">
+          <div class="section-header">
+            <h2>COLECCIÓN</h2>
+          </div>
+          <div class="toolbar glass-panel">
+            <div class="filter-bar" id="collection-filters"></div>
+            <div class="sort-bar">
+              <label for="sort-select">Ordenar por:</label>
+              <select id="sort-select">
+                <option value="power">Mayor poder</option>
+                <option value="attack">Mayor ataque</option>
+                <option value="defense">Mayor defensa</option>
+                <option value="speed">Mayor velocidad</option>
+              </select>
+            </div>
+          </div>
+          <div id="collection-grid" class="collection-grid"></div>
+        </section>
+
+        <section id="screen-battle" class="screen">
+          <div class="battle-arena glass-panel">
+            <div class="battle-header">
+              <div class="battle-title">RONDA <span id="battle-round">1</span></div>
+              <div class="battle-score">
+                <span>Tu equipo <b id="player-score">0</b></span>
+                <span>CPU <b id="cpu-score">0</b></span>
+              </div>
+            </div>
+
+            <div class="battle-vs-layout">
+              <div class="side-box player-side">
+                <div class="side-label">TU CARTA</div>
+                <div id="player-card-box" class="battle-card-box"></div>
+              </div>
+              <div class="vs-badge">VS</div>
+              <div class="side-box cpu-side">
+                <div class="side-label">CPU CARTA</div>
+                <div id="cpu-card-box" class="battle-card-box"></div>
+              </div>
+            </div>
+
+            <div class="combat-result-panel">
+              <div id="battle-status" class="battle-status">Listos para combatir</div>
+              <button id="btn-combat" class="primary-btn"><i class="fa-solid fa-shield-halved"></i> COMBATIR</button>
+            </div>
+
+            <div class="battle-footer">
+              <div class="remaining-group">
+                <span>Tu mazo restante</span>
+                <div id="player-remaining" class="remaining-icons"></div>
+              </div>
+              <div class="remaining-group">
+                <span>CPU restante</span>
+                <div id="cpu-remaining" class="remaining-icons"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-shop" class="screen">
+          <div class="section-header">
+            <h2>TIENDA</h2>
+          </div>
+          <div class="shop-layout">
+            <div class="pack-panel glass-panel">
+              <div class="pack-card pack-basic">
+                <div class="pack-header">SOBRE BÁSICO</div>
+                <div class="pack-price"><i class="fa-solid fa-coins"></i> 250</div>
+                <p>3 cartas aleatorias</p>
+                <ul class="pack-chances">
+                  <li>Común: 60%</li>
+                  <li>Rara: 25%</li>
+                  <li>Épica: 12%</li>
+                  <li>Legendaria: 3%</li>
+                </ul>
+                <button id="btn-open-pack" class="primary-btn"><i class="fa-solid fa-gift"></i> ABRIR SOBRE</button>
+              </div>
+            </div>
+            <div class="pack-results glass-panel">
+              <h3>Último premio</h3>
+              <div id="pack-results" class="pack-result-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="screen-stats" class="screen">
+          <div class="section-header">
+            <h2>ESTADÍSTICAS</h2>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-card glass-panel"><span>🏆 Victorias</span><strong id="stat-wins">0</strong></div>
+            <div class="stat-card glass-panel"><span>💀 Derrotas</span><strong id="stat-losses">0</strong></div>
+            <div class="stat-card glass-panel"><span>⚽ Combates</span><strong id="stat-battles">0</strong></div>
+            <div class="stat-card glass-panel"><span>🔥 Racha actual</span><strong id="stat-streak">0</strong></div>
+            <div class="stat-card glass-panel"><span>🪙 Monedas</span><strong id="stat-coins">0</strong></div>
+            <div class="stat-card glass-panel"><span>🃏 Cartas</span><strong id="stat-cards">0/40</strong></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass-panel delete-modal">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="confirmDeleteModalLabel">⚠️ ¿Estás seguro?</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p>Se eliminará todo tu progreso:</p>
+            <ul>
+              <li>Cartas</li>
+              <li>Mazo</li>
+              <li>Monedas</li>
+              <li>Nivel</li>
+              <li>Experiencia</li>
+              <li>Victorias</li>
+              <li>Derrotas</li>
+            </ul>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="secondary-btn" data-bs-dismiss="modal">CANCELAR</button>
+            <button id="confirmDeleteProfile" type="button" class="primary-btn">ELIMINAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js?v=20260818-1"></script>
+    <script src="js/storage.js?v=20260818-1"></script>
+    <script src="js/cards.js?v=20260818-1"></script>
+    <script src="js/deck.js?v=20260818-1"></script>
+    <script src="js/ai.js?v=20260818-1"></script>
+    <script src="js/game.js?v=20260818-1"></script>
+    <script src="js/shop.js?v=20260818-1"></script>
+    <script src="js/app.js?v=20260818-1"></script>
+  </body>
+</html>

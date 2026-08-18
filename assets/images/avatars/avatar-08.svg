@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rocket">
+  <rect width="200" height="200" rx="28" fill="#111a2b"/>
+  <path d="M100 26c31 10 52 46 52 68 0 31-19 54-52 68-33-14-52-37-52-68 0-22 21-58 52-68Z" fill="#f4f7fb"/>
+  <path d="M94 72c14 0 26 11 26 26 0 18-17 38-26 38s-26-20-26-38c0-15 12-26 26-26Z" fill="#7dd3fc"/>
+  <path d="M100 50l16 34h-32l16-34Z" fill="#ffb703"/>
+  <circle cx="100" cy="96" r="8" fill="#ffb703"/>
+  <path d="M90 116 72 152h56l-18-36Z" fill="#dbe8f5"/>
+  <path d="M100 122v42" stroke="#dbe8f5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M89 154h22" stroke="#dbe8f5" stroke-width="6" stroke-linecap="round"/>
+  <rect x="38" y="145" width="124" height="18" rx="9" fill="#0f1c2d" opacity="0.8"/>
+</svg>

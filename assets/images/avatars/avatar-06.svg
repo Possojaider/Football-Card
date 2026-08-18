@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Rayo">
+  <rect width="200" height="200" rx="28" fill="#0d1628"/>
+  <path d="M100 30 70 98h26l-16 72 46-88h-28l16-52Z" fill="#7dd3fc"/>
+  <path d="M78 102h40l-10 26h20L94 160l8-34H82l-4-24Z" fill="#cde9ff"/>
+  <circle cx="82" cy="74" r="3" fill="#06111f"/>
+  <circle cx="116" cy="74" r="3" fill="#06111f"/>
+  <path d="M86 88c8 8 20 8 28 0" stroke="#0f2647" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <rect x="40" y="145" width="120" height="18" rx="9" fill="#091c2e" opacity="0.8"/>
+</svg>

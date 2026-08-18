@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Lobo">
+  <rect width="200" height="200" rx="28" fill="#1d2330"/>
+  <path d="M63 82c10-26 31-42 37-42 16 0 36 20 42 42 7 22-2 46-16 56-11 8-25 12-34 12-15 0-30-7-38-18-7-10-8-32 9-50Z" fill="#9fb7d0"/>
+  <path d="M86 83l-16 21 17 7 17-22-18-6Z" fill="#dbe7f5"/>
+  <path d="M114 83l16 21-17 7-17-22 18-6Z" fill="#dbe7f5"/>
+  <circle cx="87" cy="84" r="3" fill="#1e2633"/>
+  <circle cx="113" cy="84" r="3" fill="#1e2633"/>
+  <path d="M89 98c9 8 14 8 22 0" stroke="#646f7d" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M62 132c14 14 28 20 38 20s24-6 38-20l-10 26H72l-10-26Z" fill="#c9d7e7"/>
+  <rect x="42" y="144" width="116" height="18" rx="9" fill="#101827" opacity="0.8"/>
+</svg>
